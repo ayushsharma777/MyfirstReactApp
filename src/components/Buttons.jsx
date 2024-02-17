@@ -3,8 +3,16 @@ import React from "react";
 function Buttons({ btnName, setText, text }) {
   const onButtonClick = () => {
     if (btnName == "=") {
-      const result = eval(text);
-      setText(result);
+      try {
+        const result = eval(text);
+        setText(result);
+      } catch (e) {
+        alert(
+          "Please enter correct input values or operator \n" +
+            "Error: " +
+            e.message
+        );
+      }
     } else if (btnName == "C") {
       setText("");
     } else {
