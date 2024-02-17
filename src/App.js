@@ -1,5 +1,5 @@
 import "./App.css";
-import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/css/bootstrap.min.css"; //imported bootstrap
 import Buttons from "./components/Buttons";
 import { useState } from "react";
 function App() {
@@ -22,7 +22,7 @@ function App() {
     "C",
   ];
 
-  const [text, setText] = useState("");
+  const [text, setText] = useState(""); //using state
 
   return (
     <div className="d-flex align-items-center justify-content-center flex-column vh-100">
@@ -41,6 +41,7 @@ function App() {
         <div className="d-flex  align-items-center justify-content-center button-container p-2">
           {buttons.map((button, index) => {
             return (
+              //passing prop in components
               <Buttons
                 btnName={button}
                 key={index}
